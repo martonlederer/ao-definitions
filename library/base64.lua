@@ -1,4 +1,4 @@
----@meta base64
+---@meta .base64
 local base64 = {}
 
 -- Allows creating a new encoder table to customize the encode() function's result
