@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
+  "name": "ao",
+  "words": ["Handlers.add", "Handlers.append", "Handlers.prepend", "Handlers.utils.hasMatchingTag", "ao.send", "ao.spawn"],
+  "files": ["process.lua"]
+}
