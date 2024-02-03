@@ -1,5 +1,5 @@
 ---@meta .utils
-local utils = {}
+local utils = { _version = "0.0.2" }
 
 -- Allows currying usage of a function
 ---@param fn function
