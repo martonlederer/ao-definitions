@@ -21,19 +21,19 @@
 ---@field TagArray Tag[] Message tags array
 ---@field Tags table<string, string> Message tags in "key = value" format
 local Message = {
-  -- Block height of the message transaction
-  ---@type number
-  ["Block-Height"] = 0,
-  -- The message that initiated this message
-  ---@type string
-  ["Cranked-For"] = "",
-  -- The process forwarding the message
-  ---@type string
-  ["Forwarded-By"] = "",
-  ---@type string
-  ["Hash-Chain"] = "",
-  ---@type boolean
-  ["Read-Only"] = false
+	-- Block height of the message transaction
+	---@type number
+	["Block-Height"] = 0,
+	-- The message that initiated this message
+	---@type string
+	["Cranked-For"] = "",
+	-- The process forwarding the message
+	---@type string
+	["Forwarded-By"] = "",
+	---@type string
+	["Hash-Chain"] = "",
+	---@type boolean
+	["Read-Only"] = false,
 }
 
 -- Message with optional fields

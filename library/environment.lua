@@ -3,10 +3,10 @@
 -- Definitions for global variables in the environment
 
 -- "ao" global library
-ao = require "ao"
+ao = require("ao")
 
 -- "Handlers" global library
-Handlers = require ".handlers"
+Handlers = require(".handlers")
 
 -- All the messages that are received and not handled by any handlers
 ---@type Message[]
@@ -27,7 +27,7 @@ Name = ""
 Owner = ""
 
 -- A function that takes any lua Table and generates a print friendly output of the data
-Dump = require ".dump"
+Dump = require(".dump")
 
 -- A functional utility library with functions like map, reduce, filter
-Utils = require ".utils"
+Utils = require(".utils")

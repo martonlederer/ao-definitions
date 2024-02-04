@@ -6,6 +6,6 @@
 ---@param filter number
 ---@param udata any
 ---@return string
-local dump = function (val, indent, padding, filter, udata) end
+local dump = function(val, indent, padding, filter, udata) end
 
 return dump

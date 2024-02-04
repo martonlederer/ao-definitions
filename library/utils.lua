@@ -32,7 +32,7 @@ function utils.map(fn, data) end
 
 -- This function creates a new array from a portion of the original, only keeping the elements that passed a provided filter function's test
 ---@generic T : unknown
----@param fn fun(val: T): boolean Filter function 
+---@param fn fun(val: T): boolean Filter function
 ---@param data T[] Array to filter
 ---@return T[]
 function utils.filter(fn, data) end
@@ -76,7 +76,7 @@ function utils.includes(val, t) end
 
 -- Get the keys of a table as an array
 ---@generic T : unknown
----@param t table<T, unknown> 
+---@param t table<T, unknown>
 ---@return T[]
 function utils.keys(t) end
 
