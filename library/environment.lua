@@ -31,3 +31,18 @@ Dump = require(".dump")
 
 -- A functional utility library with functions like map, reduce, filter
 Utils = require(".utils")
+
+--- Returns a **seeded** random number based on the provided arguments.
+--- The seed is generated using the block height, the owner address, the process' module id and the message id
+---
+---* `math.random()`: Returns a float in the range [0,1).
+---* `math.random(n)`: Returns a integer in the range [1, n].
+---* `math.random(m, n)`: Returns a integer in the range [m, n].
+---
+---@overload fun(): number
+---@overload fun(m: integer): integer
+---@param m integer
+---@param n integer
+---@return integer
+---@nodiscard
+function math.random(m, n) end
