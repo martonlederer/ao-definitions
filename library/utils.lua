@@ -72,6 +72,7 @@ function utils.prop(propName, object) end
 -- Checks if an array includes a specific value (of primitive type)
 ---@param val unknown Value to check for
 ---@param t unknown[] Array to find the value in
+---@return boolean
 function utils.includes(val, t) end
 
 -- Get the keys of a table as an array
