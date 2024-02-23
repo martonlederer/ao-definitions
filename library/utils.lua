@@ -41,7 +41,7 @@ function utils.filter(fn, data) end
 ---@generic T : unknown
 ---@param fn fun(val: T): boolean The find function that receives the current element and returns true if it matches, false if it doesn't
 ---@param t T[] Array to find the element in
----@return T
+---@return T|nil
 function utils.find(fn, t) end
 
 -- Checks if a specified property of a table equals with the provided value
