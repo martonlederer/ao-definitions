@@ -44,6 +44,6 @@ local Message = {
 
 ---@alias HandlerFunction fun(message: Message, environment: Message): any
 
----@alias PatternFunction fun(message: Message): boolean | 1 | 0 | -1 | "continue" | "break" | string
+---@alias PatternFunction fun(message: Message): boolean | 1 | 0 | -1 | "continue" | "skip" | "break"
 
 ---@alias Handler { pattern: string; handle: HandlerFunction, name: string }
