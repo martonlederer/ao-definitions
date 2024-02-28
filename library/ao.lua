@@ -56,12 +56,6 @@ function ao.send(message) end
 ---@return Message
 function ao.spawn(module, message) end
 
--- Appends the provided value/message to the Results.Output table
--- which can later be read using the aoconnect library. Useful for
--- debugging as well as returning an output value to a caller.
----@param txt any Data to be logged
-function ao.log(txt) end
-
 -- Internal function: clear module outbox
 ---@deprecated
 function ao.clearOutbox() end
