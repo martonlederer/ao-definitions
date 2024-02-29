@@ -2,7 +2,7 @@
 -- Create a new instance of bint
 ---@param bits number Number of bits for the integer representation, must be multiple of wordbits and at least 64
 ---@param wordbits number? Number of the bits for the internal word, defaults to half of Lua's integer size
----@return Bint
+---@return fun(x: string|number|Bint): Bint
 local bint = function(bits, wordbits) end
 
 ---@class Bint
