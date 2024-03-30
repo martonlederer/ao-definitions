@@ -1,9 +1,8 @@
 ---@meta .bint
--- Create a new instance of bint
----@param bits number Number of bits for the integer representation, must be multiple of wordbits and at least 64
----@param wordbits number? Number of the bits for the internal word, defaults to half of Lua's integer size
+-- Create a new bint from a value. Alias for `bint.new`
+---@param x any A value convertible to a bint (string, number, or another bint).
 ---@return Bint
-local bint = function(bits, wordbits) end
+local bint = function(x) end
 
 ---@class Bint
 local Bint = {}
