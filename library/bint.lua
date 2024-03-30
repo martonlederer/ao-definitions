@@ -1,6 +1,6 @@
 ---@meta .bint
 -- Create a new bint from a value. Alias for `bint.new`
----@param x any A value convertible to a bint (string, number, or another bint).
+---@param x Bint|number|string A value convertible to a bint (string, number, or another bint).
 ---@return Bint
 local bint = function(x) end
 
@@ -47,7 +47,7 @@ function Bint.fromle(buffer) end
 function Bint.frombe(buffer) end
 
 -- Create a new bint from a value.
----@param x any A value convertible to a bint (string, number, or another bint).
+---@param x Bint|number|string A value convertible to a bint (string, number, or another bint).
 ---@return Bint
 function Bint.new(x) end
 
