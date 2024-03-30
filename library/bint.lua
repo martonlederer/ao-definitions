@@ -18,23 +18,23 @@ function Bint.one() end
 
 -- Create a bint from an unsigned integer.
 ---@param x number A value to initialize from convertible to a lua integer.
----@return Bint
+---@return Bint|nil
 function Bint.fromuinteger(x) end
 
 -- Create a bint from a signed integer.
 ---@param x number A value to initialize from convertible to a lua integer.
----@return Bint
+---@return Bint|nil
 function Bint.frominteger(x) end
 
 -- Create a bint from a string of the desired base.
 ---@param s string The string to be converted from.
 ---@param base number? Base of the number represented in the string, defaults to 10.
----@return Bint
+---@return Bint|nil
 function Bint.frombase(s, base) end
 
 -- Create a new bint from a string.
 ---@param s string A string convertible to a bint.
----@return Bint
+---@return Bint|nil
 function Bint.fromstring(s) end
 
 -- Create a new bint from a buffer of little-endian bytes.
@@ -55,34 +55,34 @@ function Bint.new(x) end
 -- Convert a value to a bint if possible.
 ---@param x any A value to be converted (string, number, or another bint).
 ---@param clone boolean? A boolean that tells if a new bint reference should be returned. Defaults to false.
----@return Bint
+---@return Bint|nil
 function Bint.tobint(x, clone) end
 
 -- Convert a value to a bint if possible otherwise to a lua number.
 ---@param x any A value to be converted (string, number, or another bint).
 ---@param clone boolean? A boolean that tells if a new bint reference should be returned. Defaults to false.
----@return Bint|number
+---@return Bint|number|nil
 function Bint.parse(x, clone) end
 
 -- Convert a bint to an unsigned integer.
 ---@param x Bint A bint to be converted into an unsigned integer.
----@return number
+---@return number|nil
 function Bint.touinteger(x) end
 
 -- Convert a bint to a signed integer.
 ---@param x Bint A bint to be converted into a signed integer.
----@return number
+---@return number|nil
 function Bint.tointeger(x) end
 
 -- Convert a bint to a lua float in case integer would wrap around or lua integer otherwise.
 ---@param x Bint A bint to be converted into a lua number.
----@return number
+---@return number|nil
 function Bint.tonumber(x) end
 
 -- Convert a bint to a string in the desired base.
 ---@param x Bint The bint to be converted.
 ---@param base number? Base to be represented, defaults to 10. Must be at least 2 and at most 36.
----@param unsigned boolean? Whether to output as an unsigned integer. Defaults to false for base 10 and true for others.
+---@param unsigned boolean? Whether to output as an unsigned integer. Defaults to false for base 10 and true for others. When unsigned is false the symbol '-' is prepended in negative values
 ---@return string
 function Bint.tobase(x, base, unsigned) end
 
@@ -130,7 +130,7 @@ function Bint.isnumeric(x) end
 
 -- Get the number type of the input (bint, integer, or float).
 ---@param x any The value to check.
----@return string
+---@return string|nil
 function Bint.type(x) end
 
 -- Check if a number is negative considering bints.
@@ -223,9 +223,9 @@ function Bint.brol(x, y) end
 ---@return Bint
 function Bint.bror(x, y) end
 
--- Truncate a number to a bint.
+-- Truncate a number to a bint. Floats numbers are truncated, that is, the fractional port is discarded.
 ---@param x number The number to truncate.
----@return Bint
+---@return Bint|nil
 function Bint.trunc(x) end
 
 -- Take maximum between two numbers considering bints.
