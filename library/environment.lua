@@ -32,6 +32,15 @@ Dump = require(".dump")
 -- A functional utility library with functions like map, reduce, filter
 Utils = require(".utils")
 
+-- Terminal colors
+Colors = {
+  red = "\27[31m",
+  green = "\27[32m",
+  blue = "\27[34m",
+  reset = "\27[0m",
+  gray = "\27[90m"
+}
+
 --- Returns a **seeded** random number based on the provided arguments.
 --- The seed is generated using the block height, the owner address, the process' module id and the message id
 ---
