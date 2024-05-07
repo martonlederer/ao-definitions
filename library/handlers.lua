@@ -51,6 +51,12 @@ function handlers.evaluate(message, environment) end
 ---@return PatternFunction
 function handlers.utils.hasMatchingTag(name, value) end
 
+-- Helper pattern function that can be used to trigger a handler, if it has a tag with one of the values defined
+---@param name string Tag name
+---@param values string Expected values for the tag
+---@return PatternFunction
+function handlers.utils.hasMatchingTagOf(name, values) end
+
 -- Helper pattern function that can be used to trigger a handler, if its data matches the expected value
 ---@param value string Expected value for message data
 ---@return PatternFunction
@@ -60,5 +66,10 @@ function handlers.utils.hasMatchingData(value) end
 ---@param input string The message data to reply with
 ---@return fun(msg: Message)
 function handlers.utils.reply(input) end
+
+-- If a pattern function is wrapped with this pattern helper, it'll continue handler execution
+---@param fn PatternFunction
+---@return PatternFunction
+function handlers.utils.continue(fn) end
 
 return handlers
