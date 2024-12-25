@@ -20,6 +20,8 @@
 ---@field Nonce number
 ---@field TagArray Tag[] Message tags array
 ---@field Tags table<string, string> Message tags in "key = value" format
+---@field reply fun(message: MessageParam): OutgoingMessage Reply to this message
+---@field forward fun(target: string, message: MessageParam) Forward this message to another target
 local Message = {
 	-- Block height of the message transaction
 	---@type number
