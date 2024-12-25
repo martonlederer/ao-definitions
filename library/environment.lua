@@ -34,11 +34,11 @@ Utils = require(".utils")
 
 -- Terminal colors
 Colors = {
-  red = "\27[31m",
-  green = "\27[32m",
-  blue = "\27[34m",
-  reset = "\27[0m",
-  gray = "\27[90m"
+	red = "\27[31m",
+	green = "\27[32m",
+	blue = "\27[34m",
+	reset = "\27[0m",
+	gray = "\27[90m",
 }
 
 --- Returns a **seeded** random number based on the provided arguments.
