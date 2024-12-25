@@ -1,17 +1,17 @@
 ---@meta .utils
 local utils = { _version = "0.0.2" }
 
----@alias Spec table|(fun(msg: MessageParam): boolean)
+---@alias Spec table|(fun(msg: Message): boolean)
 
 -- Given a pattern, a value, and a message, returns whether there is a pattern match
 ---@param pattern Pattern|nil The pattern to match
 ---@param value Pattern The value to check for in the pattern
----@param msg MessageParam The message to check for the pattern
+---@param msg Message The message to check for the pattern
 ---@return boolean
 function utils.matchesPattern(pattern, value, msg) end
 
 -- Given a message and a spec, returns whetehr there is a spec match
----@param msg MessageParam The message to check for in the spec
+---@param msg Message The message to check for in the spec
 ---@param spec Spec The spec to check for in the message
 ---@return boolean
 function utils.matchesSpec(msg, spec) end

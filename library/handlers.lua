@@ -9,7 +9,7 @@ handlers.list = {}
 
 -- Given a resolver specification, returns a resolver function
 ---@param resolveSpec Spec The resolver specification
----@return fun(msg: MessageParam): boolean
+---@return fun(msg: Message): boolean
 function handlers.generateResolver(resolveSpec) end
 
 -- Given a pattern, returns the next message that matches the pattern

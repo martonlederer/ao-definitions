@@ -47,13 +47,13 @@ ao.env = {
 -- item into the process' outbox along with the ao specs compliant
 -- message tags
 ---@param message MessageParam The message to be sent
----@return Message
+---@return OutgoingMessage
 function ao.send(message) end
 
 -- Allows spawning a new process, from within another process.
 ---@param module string Arweave transaction ID of the module used by the new process
 ---@param message MessageParam The message that initializes the process
----@return Message
+---@return OutgoingMessage
 function ao.spawn(module, message) end
 
 -- Internal function: clear module outbox
