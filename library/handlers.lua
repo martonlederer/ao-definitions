@@ -7,32 +7,53 @@ handlers.utils = {}
 ---@type Handler[]
 handlers.list = {}
 
+-- Given a resolver specification, returns a resolver function
+---@param resolveSpec Spec The resolver specification
+---@return fun(msg: MessageParam): boolean
+function handlers.generateResolver(resolveSpec) end
+
+-- Given a pattern, returns the next message that matches the pattern
+-- This function uses Lua's coroutines under-the-hood to add a handler, pause,
+-- and then resume the current coroutine. This allows us to effectively block
+-- processing of one message until another is received that matches the pattern.
+---@param pattern Pattern The pattern to check for in the message
+---@return Message
+function handlers.receive(pattern) end
+
+-- Given a name, a pattern, and a handle, adds a handler to the list
+-- If name is not provided, "_once_" prefix plus onceNonce will be used as the name.
+-- Adds handler with maxRuns of 1 such that it will only be called once then removed from the list
+---@param name string The name of the handler
+---@param pattern Pattern The pattern to check for in the message
+---@param handle HandlerFunction The function to call if the pattern matches
+function handlers.once(name, pattern, handle) end
+
 -- Add a new message handler
 ---@param name string Unique handler name
----@param pattern PatternFunction A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
+---@param pattern Pattern A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
 ---@param handle HandlerFunction The function executed if the pattern matched
 function handlers.add(name, pattern, handle) end
 
 -- Append a new message handler at the end of the handler list
 ---@param name string Unique handler name
----@param pattern PatternFunction A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
+---@param pattern Pattern A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
 ---@param handle HandlerFunction The function executed if the pattern matched
 function handlers.append(name, pattern, handle) end
 
 -- Prepend a new message handler at the beginning of the handler list
 ---@param name string Unique handler name
----@param pattern PatternFunction A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
+---@param pattern Pattern A function that determinates if the hanlder should be executed or not<br/> - Return 0 to not call handler<br/> - Return -1 to break after handler is called<br/> - Return 1 to continue
 ---@param handle HandlerFunction The function executed if the pattern matched
 function handlers.prepend(name, pattern, handle) end
 
 -- Insert a handler before a specified handler
 ---@param handleName string Name of the handler to insert before
----@return { add: fun(name: string, pattern: PatternFunction, handler: HandlerFunction) }
+---@return { add: fun(name: string, pattern: Pattern, handler: HandlerFunction) }
 function handlers.before(handleName) end
 
 -- Insert a handler after a specified handler
 ---@param handleName string Name of the handler to insert after
----@return { add: fun(name: string, pattern: PatternFunction, handler: HandlerFunction) }
+---@return { add: fun(name: string, pattern: Pattern, handler: HandlerFunction) }
 function handlers.after(handleName) end
 
 -- Remove a handler

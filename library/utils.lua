@@ -1,7 +1,6 @@
 ---@meta .utils
 local utils = { _version = "0.0.2" }
 
----@alias Pattern string|table|(fun(value: any, msg: MessageParam): boolean)
 ---@alias Spec table|(fun(msg: MessageParam): boolean)
 
 -- Given a pattern, a value, and a message, returns whether there is a pattern match
