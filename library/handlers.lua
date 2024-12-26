@@ -74,7 +74,7 @@ function handlers.utils.hasMatchingTag(name, value) end
 
 -- Helper pattern function that can be used to trigger a handler, if it has a tag with one of the values defined
 ---@param name string Tag name
----@param values string Expected values for the tag
+---@param values string[] Expected values for the tag
 ---@return PatternFunction
 function handlers.utils.hasMatchingTagOf(name, values) end
 
